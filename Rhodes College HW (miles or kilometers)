@@ -1,0 +1,44 @@
+Form = (input("do you want to use (k)ilometers or (m)iles "))
+
+
+def better_round(val:float, n_digits:int = 0):
+    val *= 10**n_digits
+    result = int(val + (0.5 if val >= 0 else -0.5))
+    return result / 10**n_digits
+
+if Form == 'k' or Form == 'K':
+    distance = (int(input("how many kilometers?")))
+    mileTime = (distance * .62)
+    print (mileTime, "mi")
+    time = mileTime/15
+    print ("it will take about", time*60, "minutes")
+    CompanyA = ((time*60) * .15) + 1
+    #print ("company A will cost $",better_round(CompanyA, 2))
+    CompanyB = (((time*60) - 5) * .12) + 2.5
+    #print ("company B will cost $",better_round(CompanyB, 2))
+    CompanyC = ((time*60) * .06) + 5
+    #print("company C will cost $",better_round(CompanyC, 2))
+    if CompanyA < CompanyB and CompanyA < CompanyC:
+        print("the best company is company A, it will cost $", CompanyA)
+    elif CompanyB < CompanyA and CompanyB < CompanyC:
+        print("the best company is company B, it will cost $", CompanyB)
+    elif CompanyC < CompanyB and CompanyC < CompanyA:
+        print("the best company is company C, it will cost $", CompanyC)
+
+elif Form == 'm' or Form == 'M' :
+    distance2 = (int(input("how many miles?")))
+    print("thats about",distance2 *1.61, "km")
+    time = distance2/15
+    print ("it will take about", time*60, "minutes")
+    CompanyA = ((time*60) * .15) + 1
+    #print ("company A will cost $",better_round(CompanyA, 2))
+    CompanyB = (((time*60) - 5) * .12) + 2.5
+    #print ("company B will cost $",better_round(CompanyB, 2))
+    CompanyC = ((time*60) * .06) + 5
+    #print("company C will cost $",better_round(CompanyC, 2))
+    if CompanyA < CompanyB and CompanyA < CompanyC:
+        print("the best company is company A, it will cost $", CompanyA)
+    elif CompanyB < CompanyA and CompanyB < CompanyC:
+        print("the best company is company B, it will cost $", CompanyB)
+    elif CompanyC < CompanyB and CompanyC < CompanyA:
+        print("the best company is company C, it will cost $", CompanyC)
